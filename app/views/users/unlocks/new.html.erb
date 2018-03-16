@@ -1,0 +1,33 @@
+<h1 class="title is-3 is-spaced is-primary has-text-centered">Let's get you unlocked.</h1>
+<h2 class="subtitle is-6 is-secondary has-text-centered">
+  Just enter your email address below and we will send or resend your unlock code there.
+</h2>
+
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+
+  <div class="field">
+    <%#= f.label :email, class: 'label' %>
+    <div class="control has-icons-left">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium', placeholder: 'Your Email Address' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope fa-xs"></i>
+      </span>
+    </div>
+    
+  </div>
+
+
+  <div class="field">
+    <div class="control">
+      <%= f.submit "Resend Unlock Email", class: 'button is-fullwidth is-medium is-success' do %>
+        <span class="icon is-small">
+          <i class="fas fa-lock fa-s"></i>
+        </span>
+      <% end%>
+    </div>
+  </div>
+<% end %>
+
+<span class="links"></span>
+<%= render "devise/shared/links" %>

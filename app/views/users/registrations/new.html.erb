@@ -1,0 +1,60 @@
+<div class="columns is-fullheight is-centered">
+  <div class="column is-centered is-6-desktop is-10-touch">
+    <%= image_tag 'logo.png', id: 'logo', class: 'image' %>
+    <h1 class="title is-3 is-spaced is-primary has-text-centered">Welcome to Better Reviews.</h1>
+    <h2 class="subtitle is-6 is-secondary has-text-centered">
+      Already signed up? <%= render "devise/shared/links" %>
+    </h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+      <div class="field">
+        <%#= f.label :name, class: 'label'  %>
+        <div class="control has-icons-left">
+          <%= f.text_field :name, autofocus: false, autocomplete: "name", class: 'input is-medium', placeholder: 'Your Name' %>
+          <span class="icon is-small is-left">
+            <i class="fal fa-user-alt fa-xs"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <%#= f.label :email, class: 'label' %>
+        <div class="control has-icons-left">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium', placeholder: 'Your Email Address' %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope fa-xs"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <%#= f.label :password, class: 'label'  %>
+        <div class="control has-icons-left">
+          <%= f.password_field :password, autocomplete: "off", class: 'input is-medium', placeholder: 'Your Password' %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-key fa-xs"></i>
+          </span>
+        </div>
+        <p class="help has-text-centered">
+          <% if @minimum_password_length %>
+            (<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+        </p>
+        
+      </div>
+
+    
+
+      <div class="field">
+        <div class="control">
+          <%= f.submit "Sign up", class: 'button is-fullwidth is-medium is-success' do %>
+            <span class="icon is-small">
+              <i class="fas fa-lock fa-s"></i>
+            </span>
+          <% end%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

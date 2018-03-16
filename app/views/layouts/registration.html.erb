@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <title>ReviewApp - Register | Sign In</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <section class="section">
+      <div class="container is-fullhd">
+        <div class="columns is-gapless">
+          <div class="column is-hidden-touch is-5" id="reg-ses-hero-image">
+          </div>
+          <div class="column is-fullheight">
+            <nav class="reg_ses_navbar">
+              <%= link_to root_path, id: 'reg_ses_navbar-item', alt: 'Link to Home' do %>
+                <i class="fal fa-2x fa-times"></i>
+              <% end%>
+            </nav>
+            <% if controller_name == 'add_business' %>
+              <%= render 'layouts/shared/alerts' %>
+            <% else %>
+              <%= devise_error_messages! %>
+              <%= render 'layouts/shared/alerts' %>
+            <% end %>
+            
+            <% # Items in yield are columned %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

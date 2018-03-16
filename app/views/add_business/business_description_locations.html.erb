@@ -1,0 +1,40 @@
+<div class="columns is-fullheight is-centered">
+  <div class="column is-centered is-6-desktop is-10-touch">
+    <%= image_tag 'logo.png', id: 'logo', class: 'image' %>
+
+    <h1 class="title is-5 is-spaced is-primary has-text-centered">Yer a Wizard</h1>
+    <h2 class="subtitle is-6 is-secondary has-text-centered">
+    Yer a wizzard Harry2!
+    </h2>
+
+    <%= form_for @business, url: wizard_path, method: :put do |f| %>
+
+      <div class="field">
+        <div class="control">
+          <%= f.label :description, class: 'label' %>
+          <%= f.text_area :description, class: 'textarea is-medium' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= f.label :more_than_one_location, class: 'label' do %>
+            <%= f.check_box :more_than_one_location %>
+          <% end %>
+        </div>
+      </div>
+
+      <%= f.hidden_field :signed_up, value: true %>
+
+
+      <div class="actions">
+        <%= f.submit 'Complete Signup!', class: 'button is-fullwidth is-success'%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+

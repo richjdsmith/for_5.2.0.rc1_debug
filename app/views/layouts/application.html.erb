@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    <title>ReviewApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %> site">
+    <header>
+      <%= render 'layouts/navigation/application_navbar' %>
+      <%= render 'layouts/shared/alerts' %>
+    </header>   
+    <main class="site-content">
+      <div class="columns">
+        <aside class="sidebar column is-2 is-narrow-mobile is-fullheight section">
+          <%= render 'layouts/navigation/sidebar' %>
+        </aside>
+        <div class="column is-10">
+          <div class="section">
+            <div class="container">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%= render 'layouts/shared/footer' %>
+  </body>
+</html>

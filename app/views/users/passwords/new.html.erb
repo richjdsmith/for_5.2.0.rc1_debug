@@ -1,0 +1,40 @@
+<h1 class="title is-3 is-spaced is-primary has-text-centered">Forget your password?</h1>
+<h2 class="subtitle is-6 is-secondary has-text-centered">
+  No worries, we'll have you fixed up in no time. Just enter the email 
+  address you registered with and we will send you a link to reset your password.
+</h2>
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name)) do |f| %>
+
+  <div class="field">
+    <%#= f.label :email, class: 'label' %>
+    <div class="control has-icons-left">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium', placeholder: 'Your Email Address' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope fa-xs"></i>
+      </span>
+    </div>
+    
+  </div>
+
+
+  <div class="field">
+    <div class="control">
+      <%= f.submit "Send Password Reset", class: 'button is-fullwidth is-medium is-success' do %>
+        <span class="icon is-small">
+          <i class="fas fa-lock fa-s"></i>
+        </span>
+      <% end%>
+    </div>
+  </div>
+<% end %>
+
+<span class="links"></span>
+
+
+
+
+
+
+<%= render "devise/shared/links" %>

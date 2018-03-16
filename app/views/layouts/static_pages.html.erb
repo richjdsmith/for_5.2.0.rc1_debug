@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <title>ReviewApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <header>
+      <%= render 'layouts/navigation/navbar' %>
+      <%= render 'layouts/shared/alerts' %>
+    </header>    
+    <%= yield %>
+  </body>
+</html>

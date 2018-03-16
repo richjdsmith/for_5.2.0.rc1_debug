@@ -1,0 +1,24 @@
+<nav class="navbar" role="navigation" aria-label="main navigation" data-controller="navigation">
+  <div class="navbar-brand">
+    <%= link_to root_path, class: 'navbar-item' do %>
+      <%= image_tag 'logo.png', alt: 'Review_App: Get more reviews. Get better reviews.'%>
+    <% end %>
+    <div data-target="navigation.navbar-burger" class="navbar-burger" data-action="click->navigation#toggle_menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="navbar-menu" data-target="navigation.navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <%= render 'layouts/navigation/login_logout_items' %>
+          <%= render 'layouts/navigation/registration_items' %>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</nav>

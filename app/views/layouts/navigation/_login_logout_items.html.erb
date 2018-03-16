@@ -1,0 +1,18 @@
+<div class="control">
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete, class: 'button is-secondary' do %>        
+      <span class="icon">
+        <i class="fal fa-sign-out-alt"></i>
+      </span>
+      <span>Logout</span>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, class: 'button is-secondary' do %>  
+      <span class="icon">
+        <i class="fal fa-sign-in-alt"></i>
+      </span>
+      <span>Login</span>
+    <% end %>
+  <% end %>
+</div>
+

@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ *= require_self
+ *= require fontawesome-all
+
+ */
+
+//  Bulma reccomends the following order of doing shit:
+// 1. Import intial variables and functions 
+// 2. Build out my own custom variables
+// 3. Import the rest of bulma
+// 4. Add my own overrides
+
+// Bulma Initial Variables
+@import 'utils/initial-variables';
+@import 'utils/functions';
+// My Variables
+@import 'utils/variables';
+
+@import 'utils/derived-variables';
+@import 'bulma';
+
+
+// Import Utilities and Tools
+@import 'utils/overrides';
+@import 'utils/utilities';
+@import 'utils/spacing';
+
+// Import outside packages 
+@import 'bulma-steps/dist/bulma-steps';
+
+// Import Layout Specific Styles
+@import 'layouts/static_pages';
+@import 'layouts/registration_layout';
+@import 'layouts/session_layout';
+@import 'layouts/application_layout';
+@import 'layouts/partials/sidebar';
+
+
+
+// Import Controller Specific Styles
+@import 'controllers/users';

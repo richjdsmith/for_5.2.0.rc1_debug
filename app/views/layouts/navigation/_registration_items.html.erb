@@ -1,0 +1,19 @@
+<div class="control">
+  <% if user_signed_in? %>
+    <%= link_to  edit_user_registration_path, class: 'button is-primary' do %>
+      <span class="icon">
+        <i class="fal fa-cogs"></i>
+      </span>
+      <span>Settings</span>
+    <% end %>
+  <% else %>
+    <%= link_to  new_user_registration_path, class: 'button is-primary' do %>
+      <span class="icon">
+        <i class="fal fa-user-plus"></i>
+      </span>
+      <span>Sign Up</span>
+    <% end %>
+  <% end %>
+</div>
+
+
